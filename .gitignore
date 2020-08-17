@@ -3,3 +3,14 @@
 ################################################################################
 
 /src/.vs
+/src/Acme/.vs/Acme
+/src/Acme/Acme.Models/bin/Debug/netcoreapp3.1
+/src/Acme/Acme.Models/obj
+/src/Acme/Acme.UnitTests/bin/Debug/netcoreapp3.1
+/src/Acme/Acme.UnitTests/obj
+/src/Acme/Acme.WebAPI/bin/Debug/netcoreapp3.1
+/src/Acme/Acme.WebAPI/obj
+/[Hiring Test Teko_VNLife] Senior_Lead SWE_Coding & Design Task 2020 Q2.pdf
+/[Hiring Test Teko_VNLife] Senior_Lead SWE_Coding & Design Task 2020 Q2.pdf
+/[Hiring Test Teko_VNLife] Senior_Lead SWE_Coding & Design Task 2020 Q2.pdf
+*.pdf
