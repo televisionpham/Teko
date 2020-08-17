@@ -1,31 +1,39 @@
 # Acme Web API
  
-ASP.NET Core Web API + Open API, cung cấp các hàm
+ASP.NET Core Web API + Open API, provides the following functions:
 
 **[GET] /api/Cinema/GetAvailableSeats**
 
-Trả lại danh sách cách vùng ghế còn trống, có thể đặt chỗ
+Get available seats regions
 
-Tham số:
+Parameter:
 
-- seatsCount: int - Số lượng ghế cần đặt
+- seatsCount: int - Number of seats to be reserved
 
 **[POST] /api/Cinema/Reserve**
 
-Đặt ghế
+Reserve seats
 
 Tham số:
 
-- seats: danh sách tọa độ các ghế muốn đặt
+- seats: List of seats coordinates
 
 **[GET] /api/Cinema/PrintCinema**
 
-In ra các ghế dưới dạng ma trận phục vụ mục đích test. Ghế có giá trị:
+Print seats as a 2D matrix (for testing purpose). Seat status:
 
-- 0: Có thể đặt
+- 0: Available
 
-- 1: Đã được đặt
+- 1: Reserved
 
-- -1: Còn trống nhưng không thể đặt vì phải giãn cách
+- -1: Unavailable
+
+**[POST] /api/Cinema/api/Cinema/Clear**
+Reset all seats status to 0
+
+**[POST] /api/Cinema/api/Cinema/FreeSeats**
+Cancel reserved seats
+Parameter:
+- seats: List of seats to be cancelled
 
 ![Screenshot](https://github.com/televisionpham/Teko/blob/master/Screenshot01.png)
