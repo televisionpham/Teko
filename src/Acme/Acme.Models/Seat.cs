@@ -10,10 +10,10 @@ namespace Acme.Models
         {
 
         }
-        public Seat(int x, int y)
+        public Seat(int row, int col)
         {
-            Col = x;
-            Row = y;
+            Col = col;
+            Row = row;
         }
 
         public int Col { get; set; }

@@ -12,18 +12,18 @@ namespace Acme.Models
             return Math.Abs(x1 - x2) + Math.Abs(y1 - y2);
         }
         
-        public static bool InBound(int x, int y, int colsCount, int rowsCount)
+        public static bool InBound(int row, int col, int colsCount, int rowsCount)
         {
-            return (x >= 0 && y >= 0 && x < colsCount && y < rowsCount);
+            return (row >= 0 && col >= 0 && row < rowsCount && col < colsCount);
         }
         
-        public static List<Seat> GetNextSeats(int x, int y)
+        public static List<Seat> GetNextSeats(int row, int col)
         {
             var nextSeats = new List<Seat> {
-                new Seat(x - 1, y),
-                new Seat(x + 1, y),
-                new Seat(x, y - 1),
-                new Seat(x, y + 1)
+                new Seat(row - 1, col),
+                new Seat(row + 1, col),
+                new Seat(row, col - 1),
+                new Seat(row, col + 1)
             };            
             return nextSeats;
         }        

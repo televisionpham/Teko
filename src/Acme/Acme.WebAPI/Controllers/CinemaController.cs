@@ -14,10 +14,10 @@ namespace Acme.WebAPI.Controllers
     public class CinemaController : ControllerBase
     {        
         /// <summary>
-        /// Lấy các vùng ghế có thể đặt chỗ cho số lượng ghế yêu cầu
+        /// Get available seats region for a given number
         /// </summary>
-        /// <param name="seatsCount">Số lượng ghế cần đặt</param>
-        /// <returns>Danh sách tọa độ các ghế của các vùng ghế có thể đặt</returns>
+        /// <param name="seatsCount"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("api/Cinema/GetAvailableSeats")]
         public List<List<Seat>> GetAvailableSeats(int seatsCount)
@@ -34,9 +34,9 @@ namespace Acme.WebAPI.Controllers
         }
 
         /// <summary>
-        /// Đặt ghế
+        /// Reserve seats
         /// </summary>
-        /// <param name="seats">Danh sách các ghế muốn đặt</param>
+        /// <param name="seats"></param>
         [HttpPost]
         [Route("api/Cinema/Reserve")]
         public void Reserve(List<Seat> seats)
@@ -45,7 +45,28 @@ namespace Acme.WebAPI.Controllers
         }
 
         /// <summary>
-        /// Hiển thị các ghế trong rạp dưới dạng ma trận phục vụ test 
+        /// Clear all seats
+        /// </summary>
+        [HttpPost]
+        [Route("api/Cinema/Clear")]
+        public void Clear()
+        {
+            Workspace.GetInstance().Cinema.Clear();
+        }
+
+        /// <summary>
+        /// Cancel reserved seats
+        /// </summary>
+        /// <param name="seats"></param>
+        [HttpPost]
+        [Route("api/Cinema/FreeSeats")]
+        public void FreeSeats(List<Seat> seats)
+        {
+            Workspace.GetInstance().Cinema.FreeSeats(seats);
+        }
+
+        /// <summary>
+        /// Display seats as a 2D matrix (for testing purpose)
         /// </summary>
         /// <returns></returns>
         [HttpGet]
